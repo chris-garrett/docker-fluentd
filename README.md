@@ -8,7 +8,7 @@
 
 ## Usage
 
-`docker run --rm chrisgarrett/fluentd:1.3.2-2019.03.01`
+`docker run -p 9880:9880 -e ELASTIC_HOST=elastic-host -e ELASTIC_PORT=9200 --rm -it chrisgarrett/fluentd:1.3.2-2019.03.01`
 
 
 ## Credits
