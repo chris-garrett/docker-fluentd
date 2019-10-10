@@ -1,8 +1,8 @@
-FROM fluent/fluentd:v1.3.3-1.0
+FROM fluent/fluentd:v1.7.3-1.0
 MAINTAINER Chris Garrett (https://github.com/chris-garrett/docker-fluentd)
 LABEL description="Fluent ${FLUENT_VERSION} on Alpine for shipping logs to Elastic"
 
-ENV DOCKERIZE_VERSION=v0.6.0
+ENV DOCKERIZE_VERSION=v0.6.1
 
 COPY ./scripts/bash_profile /home/fluent/.bash_profile
 COPY ./scripts/bashrc /home/fluent/.bashrc
@@ -15,7 +15,7 @@ RUN set -ex \
   && apk --no-cache add -U --virtual build-deps \
     build-base \
     ruby-dev \
-  && gem install fluent-plugin-elasticsearch --no-rdoc --no-ri --version 3.3.0 \
+  && gem install fluent-plugin-elasticsearch --no-rdoc --no-ri --version 3.5.5 \
   && gem install fluent-plugin-record-modifier --no-rdoc --no-ri --version 2.0.1 \
   && apk del build-deps \
   && apk --no-cache add -U \
