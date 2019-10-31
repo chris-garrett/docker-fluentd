@@ -17,6 +17,7 @@ RUN set -ex \
     ruby-dev \
   && gem install fluent-plugin-elasticsearch --no-rdoc --no-ri --version 3.5.5 \
   && gem install fluent-plugin-record-modifier --no-rdoc --no-ri --version 2.0.1 \
+  && gem install fluent-plugin-s3 --no-rdoc --no-ri --version 1.2.0 \
   && apk del build-deps \
   && apk --no-cache add -U \
     vim \
